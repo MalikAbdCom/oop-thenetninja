@@ -2,7 +2,7 @@
 
 class Maaalik
 {
-    private $nama;
+    protected $nama;
     private $alamat;
     protected $salary;
 
@@ -38,7 +38,7 @@ echo $userOne->lastName();
 
 class NewMalik extends Maaalik
 {
-    private $posisi;
+    public $posisi;
 
     public function __construct($newName, $newAlamat, $posisi, $salary) {
         parent::__construct($newName, $newAlamat);
@@ -46,26 +46,32 @@ class NewMalik extends Maaalik
         $this->salary = $salary;
     }
 
-    public function testPrivate(){
+    public function testPrivate() {
 
-        return $this->name;
+        return $this->nama;
     }
 
-    public function showSalary(){
+    public function showSalary() {
         return $this->salary;
     }
-    public function changeSalary($jumlah){
+
+    public function changeSalary($jumlah) {
         $this->salary = $jumlah;
     }
+
+
 }
 
 echo "<hr>";
 
 $userketiga = new NewMalik("taki", "tokyo", "CEO", "55555");
 
-print_r($userketiga) ;
+echo "user ketiga";
+
+print_r($userketiga);
+
 echo "<hr>";
-$userketiga->testPrivate();
+echo $userketiga->testPrivate();
 echo $userketiga->showSalary();
 echo "<br>";
 
@@ -75,4 +81,4 @@ echo $userketiga->showSalary();
 
 echo "<br>";
 
-echo $userketiga->hiName() . "punya gaji \$" . $userketiga->showSalary();
+echo $userketiga->hiName() . "punya gaji \$" . $userketiga->showSalary() . " apa ini coba " . $userketiga->posisi;
