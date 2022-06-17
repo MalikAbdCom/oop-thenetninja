@@ -6,15 +6,18 @@ class Maaalik
     private $alamat;
     protected $salary;
 
-    public function hiName() {
+    public function hiName()
+    {
         return $this->nama;
     }
 
-    public function lastName() {
+    public function lastName()
+    {
         return $this->alamat;
     }
 
-    public function __construct($newName, $newAlamat) {
+    public function __construct($newName, $newAlamat)
+    {
         $this->nama = $newName;
         $this->alamat = $newAlamat;
     }
@@ -40,26 +43,33 @@ class NewMalik extends Maaalik
 {
     public $posisi;
 
-    public function __construct($newName, $newAlamat, $posisi, $salary) {
+    public function __construct($newName, $newAlamat, $posisi, $salary)
+    {
         parent::__construct($newName, $newAlamat);
         $this->posisi = $posisi;
         $this->salary = $salary;
     }
 
-    public function testPrivate() {
+    public function testPrivate()
+    {
 
         return $this->nama;
     }
 
-    public function showSalary() {
+    public function showSalary()
+    {
         return $this->salary;
     }
 
-    public function changeSalary($jumlah) {
+    public function changeSalary($jumlah)
+    {
         $this->salary = $jumlah;
     }
 
-
+    public function __destruct()
+    {
+       echo "ini pertama, pusingnngg";
+    }
 }
 
 echo "<hr>";
@@ -82,3 +92,46 @@ echo $userketiga->showSalary();
 echo "<br>";
 
 echo $userketiga->hiName() . "punya gaji \$" . $userketiga->showSalary() . " apa ini coba " . $userketiga->posisi;
+
+
+//unset($userOne);
+class something
+{
+    private $namaku;
+    private $alamatku;
+
+    public function __construct($namaku, $alamatku)
+    {
+        $this->namaku = $namaku;
+        $this->alamatku = $alamatku;
+    }
+
+    public function lolo()
+    {
+        echo $this->namaku;
+    }
+    public function __destruct()
+    {
+        echo "saat terakhir di jalankan";
+    }
+}
+echo "<hr>";
+$userKeempat = new something("bangku", "sumatera");
+echo "<br>";
+print_r($userKeempat);
+echo "<br>";
+echo $userKeempat->lolo();
+echo "<br>";
+
+//unset($userKeempat);
+
+//var_dump($userKeempat);
+
+class pusing {
+    public $aaaa = "asdfasdfas";
+    public function __construct()
+    {
+
+    }
+
+}
